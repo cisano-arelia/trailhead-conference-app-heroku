@@ -51,7 +51,7 @@
         "prettier": "prettier --write \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
         "prettier:verify": "prettier --list-different \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
         "serve": "cross-env ON_HEROKU=true run-p serve:client serve:server",
-        "serve:client": "lwc-services watch --port 80",
+        "serve:client": "lwc-services watch --port ${PORT}",
         "serve:server": "node ./src/server/api.js",
         "test:unit": "lwc-services test:unit",
         "test:unit:coverage": "lwc-services test:unit --coverage",
