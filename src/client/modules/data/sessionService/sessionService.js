@@ -1,4 +1,4 @@
-const URL = '/api/sessions';
+const URL = 'http://localhost:3002/api/sessions';
 let sessions = [];
 export const getSessions = () => fetch(URL)
   .then(response => {

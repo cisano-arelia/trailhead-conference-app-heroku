@@ -4,8 +4,7 @@ module.exports = {
     resources: [{ from: 'src/client/resources', to: 'dist/resources/' }],
     sourceDir: './src/client',
     devServer: {
-        contentBase: './src/client',
-        proxy: { '/': 'http://localhost:3002' }
+        contentBase: './src/client'
     },
     lwcCompilerOutput: {
         production: {
