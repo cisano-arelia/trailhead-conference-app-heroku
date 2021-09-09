@@ -1,7 +1,12 @@
 var jsforce = require('jsforce');
 
-const { API_KEY, SF_LOGIN_URL, SF_USERNAME, SF_PASSWORD, SF_TOKEN, HOST, PORT } = process.env;
-if (!(API_KEY && SF_USERNAME && SF_PASSWORD && SF_TOKEN && SF_LOGIN_URL && HOST && PORT)) {
+require('dotenv').config();
+
+const HOST = 'localhost';
+const PORT = 3002;
+
+const { API_KEY, SF_LOGIN_URL, SF_USERNAME, SF_PASSWORD, SF_TOKEN } = process.env;
+if (!(API_KEY && SF_USERNAME && SF_PASSWORD && SF_TOKEN && SF_LOGIN_URL)) {
     console.error(
         'Cannot start app: missing mandatory configuration. Check your .env file.'
     );

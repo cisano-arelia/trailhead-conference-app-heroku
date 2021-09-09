@@ -4,6 +4,6 @@ module.exports = {
     resources: [{ from: 'src/client/resources', to: 'dist/resources/' }],
     sourceDir: './src/client',
     devServer: {
-        proxy: { '/': 'https://sheltered-savannah-04053.herokuapp.com:3002' }
+        proxy: { '/': 'http://localhost:3002' }
     }
 };
