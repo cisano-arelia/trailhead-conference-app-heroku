@@ -51,13 +51,13 @@
         "prettier": "prettier --write \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
         "prettier:verify": "prettier --list-different \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
         "serve": "cross-env ON_HEROKU=true run-p serve:client serve:server",
-        "serve:client": "lwc-services watch --port ${PORT}",
+        "serve:client": "lwc-services watch --port ${PORT} --host ${HOST}",
         "serve:server": "node ./src/server/api.js",
         "test:unit": "lwc-services test:unit",
         "test:unit:coverage": "lwc-services test:unit --coverage",
         "test:unit:debug": "lwc-services test:unit --debug",
         "test:unit:watch": "lwc-services test:unit --watch",
-        "watch": "cross-env ON_HEROKU=false PORT=3001 run-p watch:client watch:server",
+        "watch": "cross-env ON_HEROKU=false run-p watch:client watch:server",
         "watch:client": "lwc-services watch",
         "watch:server": "nodemon"
     }
