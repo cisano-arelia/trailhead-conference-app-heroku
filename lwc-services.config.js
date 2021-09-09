@@ -5,5 +5,14 @@ module.exports = {
     sourceDir: './src/client',
     devServer: {
         proxy: { '/': 'http://localhost:3002' }
+    },
+    lwcCompilerOutput: {
+        production: {
+            compat: false,
+            minify: true,
+            env: {
+                NODE_ENV: 'production'
+            }
+        }
     }
 };

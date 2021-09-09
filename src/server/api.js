@@ -1,6 +1,10 @@
 var jsforce = require('jsforce');
 
-require('dotenv').config();
+console.info('Env ON_HEROKU',process.env.ON_HEROKU);
+if (process.env.ON_HEROKU === 'false') {
+    console.info('Using dotenv');
+    require('dotenv').config();
+}
 
 const HOST = 'localhost';
 const PORT = 3002;
@@ -35,7 +39,6 @@ app.use(helmet());
 app.use(compression());
 
 app.get('/api/sessions', (req, res) => {
-    console.info('/api/sessions reached',req.session);
     const soql = `SELECT Id, Name, toLabel(Room__c), Description__c, format(Date_and_Time__c) formattedDateTime,
         (SELECT Speaker__r.Id, Speaker__r.Name, Speaker__r.Description, Speaker__r.Email, Speaker__r.Picture_URL__c FROM Session_Speakers__r)
         FROM Session__c ORDER BY Date_and_Time__c LIMIT 100`;
