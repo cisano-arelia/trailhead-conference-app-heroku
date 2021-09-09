@@ -7,7 +7,7 @@ module.exports = {
         port: '${PORT}',
         host: 'localhost',
         open: false,
-        contentBase: './src/client'
+        contentBase: './src/client',
         proxy: { '/': 'http://localhost:3002' }
     },
     server: {
