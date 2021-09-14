@@ -4,6 +4,7 @@ module.exports = {
     resources: [{ from: 'src/client/resources', to: 'dist/resources/' }],
     sourceDir: './src/client',
     devServer: {
+        disableHostCheck: true,
         contentBase: './src/client'
     },
     lwcCompilerOutput: {
