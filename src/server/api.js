@@ -6,8 +6,8 @@ if (process.env.ON_HEROKU === 'false') {
     require('dotenv').config();
 }
 
-const HOST = 'localhost';
-const PORT = 3002;
+const HOST = process.env.BACKEND_BIND_HOST || 'localhost';
+const PORT = process.env.BACKEND_PORT || 3002;
 
 const { API_KEY, SF_LOGIN_URL, SF_USERNAME, SF_PASSWORD, SF_TOKEN } = process.env;
 if (!(API_KEY && SF_USERNAME && SF_PASSWORD && SF_TOKEN && SF_LOGIN_URL)) {
@@ -77,7 +77,7 @@ app.get('/api/sessions', (req, res) => {
     });
 });
 
-app.listen(PORT, () =>
+app.listen(PORT, HOST, () =>
     console.log(
         `✅  API Server started: http://${HOST}:${PORT}/api/sessions`
     )

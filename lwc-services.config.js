@@ -5,8 +5,7 @@ module.exports = {
     sourceDir: './src/client',
     devServer: {
         disableHostCheck: true,
-        contentBase: './src/client',
-        proxy: { '/': 'http://localhost:3002' }
+        contentBase: './src/client'
     },
     lwcCompilerOutput: {
         production: {

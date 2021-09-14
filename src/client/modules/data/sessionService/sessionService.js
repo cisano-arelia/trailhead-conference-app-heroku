@@ -1,4 +1,5 @@
-const URL = 'http://localhost:3002/api/sessions';
+const URL = 'https://sheltered-savannah-04053.herokuapp.com:3002/api/sessions';
+
 let sessions = [];
 export const getSessions = () => fetch(URL)
   .then(response => {
